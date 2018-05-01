@@ -4,6 +4,9 @@ android:layout_width="fill_parent"
 android:layout_height="wrap_content"
 android:background="@drawable/list_row_selector"
 android:padding="8dp"
+android:clickable="true"
+android:focusable="true"
+android:orientation="vertical"
 android:id="@+id/movies_layout">
 
 <!-- Thumbnail Image -->

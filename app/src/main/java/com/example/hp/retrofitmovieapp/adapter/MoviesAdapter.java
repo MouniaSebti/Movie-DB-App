@@ -37,7 +37,6 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
 
         String ImageUrl, base_url;
 
-
         public MovieViewHolder(View v) {
             super(v);
             moviesLayout = (RelativeLayout) v.findViewById(R.id.movies_layout);
