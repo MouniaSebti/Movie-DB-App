@@ -1,6 +1,7 @@
 package com.example.hp.retrofitmovieapp.app;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.hp.retrofitmovieapp.R;
@@ -25,6 +27,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static android.provider.Contacts.SettingsColumns.KEY;
 import static android.support.v7.recyclerview.R.attr.layoutManager;
 import static android.support.v7.widget.RecyclerView.HORIZONTAL;
 
@@ -51,14 +54,16 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // add divider between list items
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        MyDividerItemDecoration dividerItemDecoration = new MyDividerItemDecoration(this, LinearLayoutManager.VERTICAL, 6, Color.WHITE);
+        recyclerView.addItemDecoration(dividerItemDecoration);
+
 
         // change actionbar color
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         getSupportActionBar().setBackgroundDrawable(
-                new ColorDrawable(Color.parseColor("#1b1b1b")));
+                new ColorDrawable(Color.parseColor("#666666")));
 
         pDialog = new ProgressDialog(this);
         // Showing progress dialog before making http request
@@ -74,8 +79,29 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<MovieResponse.MoviesResponse> call, Response<MovieResponse.MoviesResponse> response) {
                 int statusCode = response.code();
                 hidePDialog();
-                List<Movie> movies = response.body().getResults();
+                final List<Movie> movies = response.body().getResults();
                 recyclerView.setAdapter(new MoviesAdapter(movies, R.layout.list_item_movie, getApplicationContext()));
+
+                // recycler view item click listener
+                recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
+                    @Override
+                    public void onClick(View view, int position) {
+                        String Mt=movies.get(position).getTitle();
+                        String Md=movies.get(position).getOverview();
+                        Log.i("TEST",""+Mt);
+                       // Toast.makeText(getApplicationContext(), "Selected!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, movie_details.class);
+                        intent.putExtra("movie_title", Mt);
+                        intent.putExtra("movie_description", Md);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onLongClick(View view, int position) {
+
+                    }
+                }));
+
             }
 
             @Override
@@ -84,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(TAG, t.toString());
             }
         });
-
 
     }
 

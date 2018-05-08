@@ -2,18 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="fill_parent"
 android:layout_height="wrap_content"
-android:background="@drawable/list_row_selector"
+android:background="@color/Black"
 android:padding="8dp"
 android:clickable="true"
 android:focusable="true"
 android:orientation="vertical"
 android:id="@+id/movies_layout">
+<!--android:background="@drawable/list_row_selector"-->
 
 <!-- Thumbnail Image -->
 <ImageView
     android:id="@+id/thumbnail"
-    android:layout_width="80dp"
-    android:layout_height="80dp"
+    android:layout_width="85dp"
+    android:layout_height="85dp"
     android:layout_alignParentLeft="true"
     android:layout_marginRight="8dp" />
 
@@ -24,6 +25,7 @@ android:id="@+id/movies_layout">
     android:layout_height="wrap_content"
     android:layout_alignTop="@+id/thumbnail"
     android:layout_toRightOf="@+id/thumbnail"
+    android:textColor="@color/colorWhite"
     android:textSize="@dimen/title"
     android:textStyle="bold" />
 
@@ -31,14 +33,14 @@ android:id="@+id/movies_layout">
 
 <ImageView
     android:id="@+id/rating_image"
-    android:layout_width="15dp"
-    android:layout_height="15dp"
+    android:layout_width="12dp"
+    android:layout_height="12dp"
     android:scaleType="centerCrop"
     android:layout_below="@id/title"
     android:layout_marginTop="1dip"
     android:layout_toRightOf="@+id/thumbnail"
     android:src="@drawable/star"
-    android:tint="@color/colorAccent" />
+    android:tint="@color/yellow" />
 
 <TextView
     android:id="@+id/rating"
@@ -46,21 +48,22 @@ android:id="@+id/movies_layout">
     android:layout_height="wrap_content"
     android:layout_below="@id/title"
     android:layout_marginTop="1dip"
+    android:textColor="@color/colorWhite"
     android:layout_toRightOf="@+id/rating_image"
     android:textSize="@dimen/rating" />
 
 <!-- subtitle -->
 <TextView
     android:id="@+id/subtitle"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
     android:layout_below="@id/rating"
     android:layout_marginTop="5dp"
-    android:layout_toRightOf="@+id/thumbnail"
-    android:textColor="@color/genre"
-    android:textSize="@dimen/genre" />
-
-<!-- description -->
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:textColor="@color/colorWhite"
+    android:textSize="@dimen/year"/>
+<!-- description
 <TextView
     android:id="@+id/description"
     android:layout_width="fill_parent"
@@ -69,7 +72,7 @@ android:id="@+id/movies_layout">
     android:layout_toRightOf="@+id/thumbnail"
     android:layout_below="@id/subtitle"
     android:textColor="@color/colorGreyLight"
-    android:textSize="@dimen/year" />
+    android:textSize="@dimen/year" /> -->
 
 <!-- Release Year
 <TextView
