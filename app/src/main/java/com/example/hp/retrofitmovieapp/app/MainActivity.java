@@ -87,12 +87,18 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view, int position) {
                         String Mt=movies.get(position).getTitle();
+                        String Mr="Rating: "+movies.get(position).getVoteAverage().toString()+"/10";
                         String Md=movies.get(position).getOverview();
-                        Log.i("TEST",""+Mt);
+                       // Double Mp=movies.get(position).getPopularity();
+                        String My="Release Date: "+movies.get(position).getReleaseDate();
+                     //   Log.i("TEST",""+Mp);
                        // Toast.makeText(getApplicationContext(), "Selected!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(MainActivity.this, movie_details.class);
                         intent.putExtra("movie_title", Mt);
                         intent.putExtra("movie_description", Md);
+                        intent.putExtra("movie_rating", Mr);
+                        intent.putExtra("movie_year", My);
+                      //  intent.putExtra("movie_popularity", Mp);
                         startActivity(intent);
                     }
 

@@ -1,27 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView1" android:layout_height="match_parent"
+    android:layout_width="match_parent"
     android:background="@color/Black">
 
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/Black">
 
-    <!-- title-->
+    <!-- title
     <TextView
         android:id="@+id/Mtitle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorWhite"
-        android:textSize="@dimen/title"/>
+        android:textSize="@dimen/title"/> -->
 
-    <!-- description-->
+    <!-- description
     <TextView
         android:id="@+id/Mdescription"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:maxLines="4"
         android:textColor="@color/colorWhite"
-        android:textSize="@dimen/year"/>
+        android:textSize="@dimen/year"/> -->
 
+    <TextView
+        android:id="@+id/movie_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/white"
+        android:textSize="32sp"/>
+
+    <TextView
+        android:id="@+id/movie_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="sans-serif-light"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/movie_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="sans-serif-light"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/movie_popularity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-light"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/movie_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="sans-serif-light"
+        android:lineSpacingMultiplier="1.2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@android:color/white"/>
 
 
 </LinearLayout>
+</ScrollView>
