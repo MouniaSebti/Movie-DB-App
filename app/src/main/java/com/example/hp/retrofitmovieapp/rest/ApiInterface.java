@@ -1,5 +1,7 @@
 package com.example.hp.retrofitmovieapp.rest;
 
+import com.example.hp.retrofitmovieapp.model.Genre;
+import com.example.hp.retrofitmovieapp.model.GenreResponse;
 import com.example.hp.retrofitmovieapp.model.MovieResponse;
 
 import retrofit2.Call;
@@ -17,4 +19,8 @@ public interface ApiInterface {
 
     @GET("movie/{id}")
     Call<MovieResponse.MoviesResponse> getMovieDetails(@Path("id") int id, @Query("api_key") String apiKey);
+
+    @GET("genre/movie/list")
+    Call<GenreResponse.GenresResponse> getMovieGenre(@Query("api_key") String apiKey);
+
 }

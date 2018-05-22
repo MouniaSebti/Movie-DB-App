@@ -21,6 +21,7 @@ import com.example.hp.retrofitmovieapp.model.MovieResponse;
 import com.example.hp.retrofitmovieapp.rest.ApiClient;
 import com.example.hp.retrofitmovieapp.rest.ApiInterface;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         ApiInterface apiService =
                 ApiClient.getClient().create(ApiInterface.class);
 
-        Call<MovieResponse.MoviesResponse> call = apiService.getTopRatedMovies(API_KEY);
+        Call<MovieResponse.MoviesResponse> call = apiService.getTopRatedMovies(API_KEY); // retrieve just the top rated movies (do the same for popular movies)
         call.enqueue(new Callback<MovieResponse.MoviesResponse>() {
             @Override
             public void onResponse(Call<MovieResponse.MoviesResponse> call, Response<MovieResponse.MoviesResponse> response) {
@@ -86,19 +87,25 @@ public class MainActivity extends AppCompatActivity {
                 recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new RecyclerTouchListener.ClickListener() {
                     @Override
                     public void onClick(View view, int position) {
+                        Integer Mid=movies.get(position).getId(); // ID
                         String Mt=movies.get(position).getTitle();
                         String Mr="Rating: "+movies.get(position).getVoteAverage().toString()+"/10";
                         String Md=movies.get(position).getOverview();
-                       // Double Mp=movies.get(position).getPopularity();
+                        Boolean Mv=movies.get(position).getVideo();
+                        List<String> Mg=new ArrayList<String>();
+                        Mg=movies.get(position).getGenreIds();
                         String My="Release Date: "+movies.get(position).getReleaseDate();
-                     //   Log.i("TEST",""+Mp);
+                        Log.i("TEST"," Genre: "+Mg.toString());
                        // Toast.makeText(getApplicationContext(), "Selected!", Toast.LENGTH_SHORT).show();
+
                         Intent intent = new Intent(MainActivity.this, movie_details.class);
+                        intent.putExtra("movie_id", Mid);
                         intent.putExtra("movie_title", Mt);
                         intent.putExtra("movie_description", Md);
                         intent.putExtra("movie_rating", Mr);
                         intent.putExtra("movie_year", My);
-                      //  intent.putExtra("movie_popularity", Mp);
+                      // intent.putExtra("movie_video", Mv);
+                        intent.putStringArrayListExtra("movie_genre", (ArrayList<String>)Mg);
                         startActivity(intent);
                     }
 

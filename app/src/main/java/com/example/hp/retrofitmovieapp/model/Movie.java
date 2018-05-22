@@ -89,11 +89,11 @@ public class Movie {
         this.releaseDate = releaseDate;
     }
 
-    public List<Integer> getGenreIds() {
+    public List getGenreIds() {
         return genreIds;
     }
 
-    public void setGenreIds(List<Integer> genreIds) {
+    public void setGenreIds(List<Integer>  genreIds) {
         this.genreIds = genreIds;
     }
 
