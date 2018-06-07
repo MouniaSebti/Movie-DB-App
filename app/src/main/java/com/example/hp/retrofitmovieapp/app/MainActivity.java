@@ -91,12 +91,12 @@ public class MainActivity extends AppCompatActivity {
                         String Mt=movies.get(position).getTitle();
                         String Mr="Rating: "+movies.get(position).getVoteAverage().toString()+"/10";
                         String Md=movies.get(position).getOverview();
-                        Boolean Mv=movies.get(position).getVideo();
+                        String Mpp=movies.get(position).getPosterPath();
+                        String Ml="Language: "+movies.get(position).getOriginalLanguage();
                         List<String> Mg=new ArrayList<String>();
                         Mg=movies.get(position).getGenreIds();
                         String My="Release Date: "+movies.get(position).getReleaseDate();
-                        Log.i("TEST"," Genre: "+Mg.toString());
-                       // Toast.makeText(getApplicationContext(), "Selected!", Toast.LENGTH_SHORT).show();
+                        Boolean Mv=movies.get(position).getVideo();
 
                         Intent intent = new Intent(MainActivity.this, movie_details.class);
                         intent.putExtra("movie_id", Mid);
@@ -104,7 +104,12 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("movie_description", Md);
                         intent.putExtra("movie_rating", Mr);
                         intent.putExtra("movie_year", My);
-                      // intent.putExtra("movie_video", Mv);
+                        intent.putExtra("movie_poster", Mpp);
+
+                        intent.putExtra("movie_video", Mv);
+                       // Log.i("MOVIE ID"," "+Mid);
+
+                        intent.putExtra("movie_original_language", Ml);
                         intent.putStringArrayListExtra("movie_genre", (ArrayList<String>)Mg);
                         startActivity(intent);
                     }

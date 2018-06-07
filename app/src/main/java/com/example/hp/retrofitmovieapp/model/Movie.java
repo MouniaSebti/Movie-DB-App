@@ -52,11 +52,12 @@ public class Movie {
         this.originalLanguage = originalLanguage;
         this.title = title;
         this.backdropPath = backdropPath;
-        this.popularity = popularity;
+        this.popularity = popularity; //to do
         this.voteCount = voteCount;
-        this.video = video;
+        this.video = video; //to do
         this.voteAverage = voteAverage;
     }
+
     public String getPosterPath() {
         return "https://image.tmdb.org/t/p/w500/"+posterPath;
     }

@@ -12,36 +12,51 @@
     android:layout_height="wrap_content"
     android:background="@color/Black">
 
-    <!-- title
-    <TextView
-        android:id="@+id/Mtitle"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorWhite"
-        android:textSize="@dimen/title"/> -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <!-- description
-    <TextView
-        android:id="@+id/Mdescription"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:maxLines="4"
-        android:textColor="@color/colorWhite"
-        android:textSize="@dimen/year"/> -->
+        <TextView
+            android:id="@+id/movie_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/white"
+            android:textSize="32sp"/>
 
-    <TextView
-        android:id="@+id/movie_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        android:textColor="@android:color/white"
-        android:textSize="32sp"/>
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/movie_poster"
+                android:layout_width="95dp"
+                android:layout_height="105dp"
+                android:layout_margin="4dp"
+                android:layout_alignParentLeft="true" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
     <TextView
         android:id="@+id/movie_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="sans-serif-light"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/movie_original_language"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -66,13 +81,19 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="32dp"
-        android:text="Genre: "
         android:fontFamily="sans-serif-light"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@android:color/white"/>
+    </LinearLayout>
+  </LinearLayout>
+    </LinearLayout>
 
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
         android:id="@+id/movie_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -82,6 +103,15 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/white"/>
 
+
+        <Button
+            android:id="@+id/trailer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Trailer" />
+
+    </LinearLayout>
 
 </LinearLayout>
 </ScrollView>
