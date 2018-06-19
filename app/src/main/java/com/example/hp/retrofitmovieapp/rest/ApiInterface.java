@@ -18,6 +18,18 @@ public interface ApiInterface {
     @GET("movie/top_rated")
     Call<MovieResponse.MoviesResponse> getTopRatedMovies(@Query("api_key") String apiKey);
 
+    @GET("movie/popular")
+    Call<MovieResponse.MoviesResponse> getPopularMovies(@Query("api_key") String apiKey);
+
+  /*  @GET("movie/latest")
+    Call<MovieResponse.MoviesResponse> getLatestMovies(@Query("api_key") String apiKey); */
+
+    @GET("movie/upcoming")
+    Call<MovieResponse.MoviesResponse> getUpcomingMovies(@Query("api_key") String apiKey);
+
+    @GET("movie/now_playing")
+    Call<MovieResponse.MoviesResponse> getNowPlayingMovies(@Query("api_key") String apiKey);
+
    /* @GET("movie/{id}")
     Call<MovieResponse.MoviesResponse> getMovieDetails(@Path("id") int id, @Query("api_key") String apiKey); */
 
