@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         getSupportActionBar().setBackgroundDrawable(
-                new ColorDrawable(Color.parseColor("#666666")));
+                new ColorDrawable(Color.parseColor("#FF4081")));
 
         pDialog = new ProgressDialog(this);
         // Showing progress dialog before making http request
@@ -98,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
         TagNow=getIntent().getExtras().getString("now_playing");
 
         //  Log.i("GET INTENT",""+TagTop);
-
 
         // retrieve just the top rated movies
         if(Objects.equals(TagTop, "ON")) {

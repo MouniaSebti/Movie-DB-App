@@ -196,7 +196,7 @@ public class movie_details extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         getSupportActionBar().setBackgroundDrawable(
-                new ColorDrawable(Color.parseColor("#666666")));
+                new ColorDrawable(Color.parseColor("#FF4081")));
     }
 
     public static void watchTrailer(Context context, String id){

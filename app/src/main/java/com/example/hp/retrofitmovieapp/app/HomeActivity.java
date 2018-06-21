@@ -1,8 +1,11 @@
 package com.example.hp.retrofitmovieapp.app;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -22,6 +25,13 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+
+        // change actionbar color
+        if(getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        getSupportActionBar().setBackgroundDrawable(
+                new ColorDrawable(Color.parseColor("#FF4081")));
 
         top = (Button) findViewById(R.id.topratedmovies);
         popular = (Button) findViewById(R.id.popularmovies);

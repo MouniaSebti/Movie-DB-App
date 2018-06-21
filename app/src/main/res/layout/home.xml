@@ -17,9 +17,11 @@
 
         <Button
             android:id="@+id/popularmovies"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/popular_movies" />
+            android:text="@string/popular_movies"
+            />
 
     </LinearLayout>
 
@@ -32,9 +34,10 @@
 
         <Button
             android:id="@+id/topratedmovies"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/top_rated_movies" />
+            android:text="@string/top_rated_movies"/>
 
     </LinearLayout>
 
@@ -47,6 +50,7 @@
 
         <Button
             android:id="@+id/upcoming"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/upcoming"/>
@@ -61,6 +65,7 @@
         android:layout_weight="1">
         <Button
             android:id="@+id/nowplaying"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/now_playing"/>
